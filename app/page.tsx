@@ -3,7 +3,9 @@
 import { useChat } from "ai/react";
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: "/api/anthropic",
+  });
   return (
     <div className="stretch mx-auto flex w-full max-w-md flex-col py-24">
       {messages.map((m) => (
